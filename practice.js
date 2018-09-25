@@ -48,9 +48,9 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 const looper = function(family){
-  for(let i=0;i<family.length;i++){
-    alert(family[i]);
-  }
+  family.map((value,index,array) => {
+    alert(value);
+  })
 }
 
 
@@ -122,14 +122,14 @@ const divider = function(numbersArray){
   evensArray = [];
   oddsArray = [];
   newArr = [evensArray,oddsArray];
-  for(let i=0; i<numbersArray.length;i++)
-  {
-    if(numbersArray[i] % 2 === 0){
-      evensArray.push(numbersArray[i]);
+  numbersArray.forEach((value) => {
+    if(value % 2 === 0){
+      evensArray.push(value);
     }else{
-      oddsArray.push(numbersArray[i]);
+      oddsArray.push(value);
     }
-  }
+  })
+  
   return newArr;
 }
 
@@ -294,7 +294,7 @@ console.log(arr1);
 console.log(arr2);
 
 both = (arr1, arr2) => {
-  const newArray = arr1.filter((value,index,array) => {
+  const newArray = arr1.filter((value) => {
     for(let i = 0; i < arr2.length; i++){
       if(value === arr2[i]){
         return arr2[i];
